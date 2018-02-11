@@ -1,6 +1,6 @@
 package com.org.effective;
 
-public enum PayDay {
+enum PayDay {
     Monday,
     Tuesday,
     Wednesday,
@@ -25,7 +25,7 @@ public enum PayDay {
 
     private final static int payRate = 40;
 
-    enum PayStrategy{
+    private enum PayStrategy{
         Workday{ float overtimePay(int minsWorked, float payRate){
                 //double pay on overtime
                 return (minsWorked - MINS_PER_SHIFT) > 0 ? (minsWorked - MINS_PER_SHIFT) * payRate * 2 : 0;
@@ -40,7 +40,7 @@ public enum PayDay {
 
         abstract float overtimePay(int minsWorked, float payRate);
 
-        float pay(int minsWorked, float payRate){
+        private float pay(int minsWorked, float payRate){
             float basePay = payRate * minsWorked;
             return basePay + overtimePay(minsWorked, payRate);
         }
