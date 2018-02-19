@@ -1,4 +1,4 @@
-package com.org.effective;
+package com.org.effective.enumeration;
 
 public class Client {
     public static void main(String[] args){

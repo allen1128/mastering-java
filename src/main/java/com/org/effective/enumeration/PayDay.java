@@ -1,4 +1,4 @@
-package com.org.effective;
+package com.org.effective.enumeration;
 
 enum PayDay {
     Monday,
