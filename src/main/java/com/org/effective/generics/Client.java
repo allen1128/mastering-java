@@ -1,4 +1,4 @@
-package com.org.effective.com.org.effective.generics;
+package com.org.effective.generics;
 
 import java.io.Serializable;
 import java.util.ArrayList;
