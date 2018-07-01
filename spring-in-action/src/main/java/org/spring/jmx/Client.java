@@ -19,7 +19,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Client {
-    public static void main(String[] args) throws IOException, InstanceNotFoundException {
+    public static void main(String[] args) throws Exception {
         echo("\nCreate an RMI connector client and " +
                 "connect it to the RMI connector server");
         JMXServiceURL url =
@@ -73,6 +73,10 @@ public class Client {
             fileMBeanProxy.addFile("notification-filename", "notification-filepath");
             waitForEnterPressed();
         } catch (MalformedObjectNameException e) {
+            e.printStackTrace();
+        } catch (InstanceNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
