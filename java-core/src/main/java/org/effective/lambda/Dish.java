@@ -1,4 +1,4 @@
-package com.org.effective.lambda;
+package org.effective.lambda;
 
 import java.util.Map;
 import java.util.stream.Stream;

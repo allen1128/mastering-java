@@ -21,7 +21,7 @@ stream & lambda
 * prefer method reference to lambda
 * Stream API : stream (finite or infinite sequence of data elements + stream pipeline which is multistage computations on the elements)
 * Stream pipeline: source stream + (0 or more) intermediate operations + 1 terminal operations
-* intermdiate operations: filter, map, flatMap, limit, sorted, distinct, skip, etc.
+* intermdiate operations: filter, map, flatMap, limit, sorted, distinct, skip, generate, iterate, etc.
 * terminal operation: forEach, count, collect, reduce, anyMatch, noneMatch, allMAtch, findAny, findFirst, etc.
 * by default stream is run sequencially and with parallel method, stream can be executed in parallel (difficult to get it right though)
 * prefer collections as return type of stream

@@ -1,15 +1,12 @@
-package com.org.effective.lambda;
+package org.effective.lambda;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.reducing;
 
 public class Client {
     public static void main(String[] args) {
@@ -17,7 +14,6 @@ public class Client {
         List<String> list = Arrays.asList("orange", "ORANGE", "apple", "pear");
         List<String> oranges = ListHelper.filter(list, (String str) -> str.equalsIgnoreCase("orange"));
         System.out.println(oranges);
-
 
         //join strings
         String orangeNames = oranges.stream().collect(joining());
@@ -87,6 +83,5 @@ public class Client {
 
         //random generation
         System.out.println(MathHelper.random(5, 5, 6));
-
     }
 }

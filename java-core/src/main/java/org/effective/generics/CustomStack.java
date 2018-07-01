@@ -1,7 +1,6 @@
-package com.org.effective.generics;
+package org.effective.generics;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.EmptyStackException;
 import java.util.List;
 

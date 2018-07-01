@@ -1,4 +1,4 @@
-package com.org.effective.lambda;
+package org.effective.lambda;
 
 import java.util.ArrayList;
 import java.util.Collections;

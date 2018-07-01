@@ -1,4 +1,4 @@
-package com.org.effective.generics;
+package org.effective.generics;
 
 import java.util.HashSet;
 import java.util.List;
