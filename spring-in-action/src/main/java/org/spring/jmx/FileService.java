@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @Service
 @ManagedResource(objectName = "spring.jmx:type=FileService", description = "File name.")
 public class FileService implements NotificationPublisherAware, IFileService {
-    private List<Pair> files = new ArrayList<>();
+    private List<Pair> files = new ArrayList();
     private NotificationPublisher notificationPublisher;
     private AtomicLong notificationSequence = new AtomicLong();
 
@@ -36,7 +36,7 @@ public class FileService implements NotificationPublisherAware, IFileService {
             @ManagedOperationParameter(name = "filePath", description = "The second number")})
     public void addFile(String fileName, String filePath) {
         Pair newFile = new Pair(fileName, filePath);
-        List<Pair> oldFiles = files.stream().collect(Collectors.toList());
+        List oldFiles = files.stream().collect(Collectors.toList());
         files.add(newFile);
 
         if (notificationPublisher != null) {
