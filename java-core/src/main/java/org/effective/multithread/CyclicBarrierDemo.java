@@ -17,12 +17,12 @@ public class CyclicBarrierDemo {
         @Override
         public void run() {
             try {
-                Thread.sleep((int) Math.random() * 1000);
+                Thread.currentThread().sleep((int) Math.random() * 1000);
                 barrier.await();
                 System.out.println("Arrived at A at " + System.currentTimeMillis() +
                         "; Thread " + Thread.currentThread().getName());
 
-                Thread.sleep((int) Math.random() * 1000);
+                Thread.currentThread().sleep((int) Math.random() * 1000);
                 barrier.await();
                 System.out.println("Arrived at B at " + System.currentTimeMillis() +
                         " ; Thread " + Thread.currentThread().getName());
@@ -38,7 +38,7 @@ public class CyclicBarrierDemo {
     public static void main(String[] args) {
 
         //the number of parties is equal to child threads
-        final int parties = 30;
+        final int parties = 3;
         CyclicBarrier c = new CyclicBarrier(parties, new Runnable() {
             @Override
             public void run() {
