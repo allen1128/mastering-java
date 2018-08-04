@@ -1,6 +1,12 @@
 package org.effective.multithread;
 
 
+import java.util.Map;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentSkipListMap;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.LinkedBlockingQueue;
+
 public class Visibility {
     private static volatile boolean shutdown = false;
 
@@ -18,6 +24,11 @@ public class Visibility {
         Thread.sleep(1000);
         shutdown = true;
         System.out.println("exiting main");
+
+        Map<String, String> map = new ConcurrentSkipListMap();
+        Queue<String> q = new LinkedBlockingQueue<>();
+
+
 
     }
 }
