@@ -60,8 +60,8 @@ public class AnnonationDemo {
                     String name = label == null
                             ? f.getName()
                             : label.value();
-                    Object value = f.get(o);
 
+                    Object value = f.get(o);
                     if (value != null && f.getType() == Date.class) {
                         value = formatDate(f, value);
                     }
