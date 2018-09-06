@@ -11,6 +11,13 @@
         <module>spring-in-action</module>
         <module>java-core</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+            <version>1.4.5.RELEASE</version>
+        </dependency>
+    </dependencies>
 
     <packaging>pom</packaging>
 
@@ -19,6 +26,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.4.5.RELEASE</version>
             </plugin>
         </plugins>
     </build>

@@ -1,16 +1,7 @@
 package org.effective.multithread;
 
 import java.util.ArrayDeque;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.IntStream;
-
-import static java.lang.System.exit;
-import static java.lang.Thread.sleep;
 
 public class ConsumerProducerDemo {
     public static class MyBlockingQueue<E> {

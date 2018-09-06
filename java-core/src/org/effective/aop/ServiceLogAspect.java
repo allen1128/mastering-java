@@ -9,16 +9,13 @@ import java.util.Arrays;
 public class ServiceLogAspect {
     public static void before(Object object, Method method, Object[] args) {
         System.out.println("entering " +
-                method.getDeclaringClass().getSimpleName() + " with args"
+                method.getDeclaringClass().getSimpleName() + " with args="
                 + Arrays.toString(args));
     }
 
     public static void after(Object obect, Method method, Object[] args, Object result) {
         System.out.println("leaving " +
-                method.getDeclaringClass().getSimpleName() + " with result"
+                method.getDeclaringClass().getSimpleName() + " with result="
                 + result);
-    }
-
-    public static void exception(Object object, Method method, Object[] args, Throwable e) {
     }
 }

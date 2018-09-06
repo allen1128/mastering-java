@@ -12,7 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static sun.reflect.misc.MethodUtil.getMethod;
+import static org.springframework.util.ClassUtils.getMethod;
+
 
 public class CGLibContainer {
 
@@ -34,14 +35,26 @@ public class CGLibContainer {
             Aspect aspect = cls.getAnnotation(Aspect.class);
             if (aspect != null) {
 
-                Method before = getMethod(cls, "before",
-                        new Class<?>[]{Object.class, Method.class, Object[].class});
+                Method before = null;
+                try {
+                    before = getMethod(cls, "before",
+                            new Class<?>[]{Object.class, Method.class, Object[].class});
+                } catch (Exception e){
+                }
 
-                Method after = getMethod(cls, "after",
-                        new Class<?>[]{Object.class, Method.class, Object[].class, Object.class});
+                Method after = null;
+                try {
+                    after = getMethod(cls, "after",
+                            new Class<?>[]{Object.class, Method.class, Object[].class, Object.class});
+                } catch (Exception e) {
+                }
 
-                Method exception = getMethod(cls, "exception",
-                        new Class<?>[]{Object.class, Method.class, Object[].class, Throwable.class});
+                Method exception = null;
+                try {
+                    getMethod(cls, "exception",
+                            new Class<?>[]{Object.class, Method.class, Object[].class, Throwable.class});
+                } catch (Exception e){
+                }
 
                 Class<?>[] interceptedAttr = aspect.value();
 
@@ -67,7 +80,7 @@ public class CGLibContainer {
         }
 
         List<Method> methods = map.get(point);
-        if (method == null) {
+        if (methods == null) {
             methods = new ArrayList<>();
             map.put(point, methods);
         }
@@ -97,7 +110,7 @@ public class CGLibContainer {
                     f.setAccessible(true);
                 }
 
-                Class<?> fieldCls = f.getClass();
+                Class<?> fieldCls = f.getType();
                 f.set(obj, createInstance(fieldCls));
             }
 
@@ -125,7 +138,7 @@ public class CGLibContainer {
                                 .getSuperclass(),
                         InterceptPoint.AFTER);
                 for (Method m : afterMethods) {
-                    m.invoke(null, new Object[]{o, method, args});
+                    m.invoke(null, new Object[]{o, method, args, result});
                 }
                 return result;
             } catch (Throwable t) {
@@ -134,7 +147,7 @@ public class CGLibContainer {
                         , InterceptPoint.EXCEPTION);
 
                 for (Method m : exceptionMethods) {
-                    m.invoke(null, new Object[]{o, method, args});
+                    m.invoke(null, new Object[]{o, method, args, t});
                 }
 
                 throw t;
