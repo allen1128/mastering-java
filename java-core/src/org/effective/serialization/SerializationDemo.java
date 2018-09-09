@@ -70,9 +70,9 @@ public class SerializationDemo {
         String output = objectMapper.writeValueAsString(studentDemo);
         System.out.println(output);
 
-        objectMapper.writeValue(new File("temp.json"), studentDemo);
+        objectMapper.writeValue(new File("data/temp.json"), studentDemo);
 
-        Student studentDemoFromFile = objectMapper.readValue(new File("temp.json"), Student.class);
+        Student studentDemoFromFile = objectMapper.readValue(new File("data/temp.json"), Student.class);
 
         if (studentDemo.equals(studentDemoFromFile)) {
             System.out.println("serialization successful.");
