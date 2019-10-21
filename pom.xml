@@ -10,6 +10,7 @@
     <modules>
         <module>spring-in-action</module>
         <module>java-core</module>
+        <module>thinkinginjava</module>
     </modules>
     <dependencies>
         <dependency>
