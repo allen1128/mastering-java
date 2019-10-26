@@ -15,12 +15,12 @@ public class Demo {
                 public void run() {
                     try {
                         account1.transfer(account2, 1);
+                        countDownLatch.countDown();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
             }).start();
-            countDownLatch.countDown();
         }
 
         countDownLatch.await();

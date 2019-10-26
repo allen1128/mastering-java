@@ -11,6 +11,8 @@
         <module>spring-in-action</module>
         <module>java-core</module>
         <module>thinkinginjava</module>
+        <module>concurrency</module>
+        <module>concurrency</module>
     </modules>
     <dependencies>
         <dependency>
