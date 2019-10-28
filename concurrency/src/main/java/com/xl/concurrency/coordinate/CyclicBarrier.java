@@ -6,7 +6,7 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-public class Demo {
+public class CyclicBarrier  {
     private Vector<String> list1 = new Vector<>();
     private Vector<String> list2 = new Vector<>();
 
