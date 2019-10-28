@@ -6,7 +6,7 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-public class CyclicBarrier  {
+public class CyclicBarrierDemo  {
     private Vector<String> list1 = new Vector<>();
     private Vector<String> list2 = new Vector<>();
 
@@ -64,7 +64,7 @@ public class CyclicBarrier  {
 
 
     public static void main(String[] args) {
-        Demo d = new Demo();
+        Demo d = new CyclicBarrierDemo();
         d.produce();
     }
 
