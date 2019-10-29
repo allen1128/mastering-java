@@ -64,7 +64,7 @@ public class CyclicBarrierDemo  {
 
 
     public static void main(String[] args) {
-        Demo d = new CyclicBarrierDemo();
+        CyclicBarrierDemo d = new CyclicBarrierDemo();
         d.produce();
     }
 

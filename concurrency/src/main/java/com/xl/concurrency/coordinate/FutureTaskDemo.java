@@ -1,4 +1,4 @@
-package com.xl.thread.deadlock;
+package com.xl.concurrency.coordinate;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
